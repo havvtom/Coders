@@ -34,7 +34,7 @@
 								<p>{{$customer->company->name}}</p>
 							</div>
 							<div class="col-md-2">
-								<p>{{$customer->active}}</p>
+								<p>{{$customer->active}}</p>								
 							</div>					
 					</div>
 				@endforeach

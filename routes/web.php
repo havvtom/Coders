@@ -20,9 +20,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/customers', 'CustomersController@index')->name('customers');
+Route::get('/customers', 'CustomersController@index')->name('customers.index');
 Route::get('/customers/create', 'CustomersController@create')->name('customers.create');
 Route::post('/customers', 'CustomersController@store')->name('customers.store');
 Route::get('/customers/{customer}', 'CustomersController@show')->name('customers.show');
 Route::get('/customers/{customer}/edit', 'CustomersController@edit')->name('customers.edit');
 Route::patch('/customers/{customer}', 'CustomersController@update')->name('customers.update');
+Route::delete('/customers/{customer}', 'CustomersController@destroy')->name('customers.destroy');

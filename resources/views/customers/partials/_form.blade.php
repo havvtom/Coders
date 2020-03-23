@@ -29,8 +29,9 @@
 		<label>Status</label>
 		<select class="form-control @error('active') is-invalid @enderror" name="active">
 			<option disabled selected>Select Status</option>
-			<option value="1" {{old('active') == 'Active' ? 'selected': '' }}>Active</option>
-			<option value="0" {{ old('active') == 'Inactive' ? 'selected': '' }}>Inactive</option>
+			@foreach($customer->activeOptions() as $activeOptionKey => $activeOptionValue)
+				<option value={{$activeOptionKey}} {{old('active') ==  $activeOptionKey ? 'selected': '' }}>{{$activeOptionValue}}</option>
+			@endforeach
 		</select>
 		@error('active')
 			<div class="text-danger">{{ $message }}</div>

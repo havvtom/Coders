@@ -26,9 +26,14 @@ class Customer extends Model
 
     public function getActiveAttribute($attribute){
 
-    	return [
-    		1 => 'Active',
-    		0 => 'Inactive'
-    	][$attribute];
+    	return $this->activeOptions()[$attribute];
+    }
+
+    public function activeOptions(){
+
+        return [
+            1 => 'Active',
+            0 => 'Inactive'
+        ];
     }
 }

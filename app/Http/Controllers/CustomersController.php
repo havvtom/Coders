@@ -49,6 +49,13 @@ class CustomersController extends Controller
     	return view('customers.show', compact('customer'));
     }
 
+    public function destroy(Customer $customer){
+
+        $customer->delete();
+
+        return redirect(route('customers.index'));
+    }
+
     private function validateAttributes($request, $customer){
 
     	return $attributes = $request->validate([
@@ -58,4 +65,5 @@ class CustomersController extends Controller
     		'active' => 'required'
     	]);
     }
+
 }

@@ -33,7 +33,16 @@
 						</div>
 					</div>
 					<div class="row">
-						<a href="/customers/{{$customer->id}}/edit" class="btn btn-secondary">Edit Customer</a>
+						<div class="col-md-6">
+							<a href="/customers/{{$customer->id}}/edit" class="btn btn-secondary">Edit Customer</a>
+						</div>
+						<div class="col-md-6">
+							<form method="POST" action="/customers/{{$customer->id}}">
+								@method('DELETE')
+								@csrf
+								<button type="submit" class="btn btn-danger">Delete Customer</button>
+							</form>
+						</div>
 					</div>
 				</div>			
 			</div>
